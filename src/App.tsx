@@ -20,13 +20,15 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Todo List</h1>
       <ul>
-        {todos.map((todo: any) => (
+        {todos.map((todo: TodoType) => (
           <li key={todo.id}>
+            <div>userId = {todo.userId}</div>
             <div>id = {todo.id}</div>
-            <div> title = {todo.title}</div>
-            <div> completed = {todo.completed ? 'true' : 'false'}</div>
+            <div>
+              <input type='checkbox' checked={todo.completed} /> title ={' '}
+              {todo.title}
+            </div>
             <br />
           </li>
         ))}
