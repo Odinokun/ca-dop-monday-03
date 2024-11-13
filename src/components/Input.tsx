@@ -1,14 +1,9 @@
-import { FC } from 'react';
+import { FC, MutableRefObject } from 'react';
 
 type PropsType = {
-  newTitle: string;
-  setNewTitle: (newTitle: string) => void;
+  newTitleRef: MutableRefObject<HTMLInputElement | null>;
 };
 
-export const Input: FC<PropsType> = ({ newTitle, setNewTitle }) => {
-  const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewTitle(e.target.value);
-  };
-
-  return <input type='text' value={newTitle} onChange={inputChangeHandler} />;
+export const Input: FC<PropsType> = ({ newTitleRef }) => {
+  return <input type='text' ref={newTitleRef} />;
 };
