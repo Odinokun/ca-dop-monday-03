@@ -30,7 +30,7 @@ function App() {
   const addTodo = () => {
     const newTodo: TodoType = {
       userId: Math.random(),
-      id: Math.random(),
+      id: todos.length + 1,
       title: newTitle,
       completed: false,
     };
